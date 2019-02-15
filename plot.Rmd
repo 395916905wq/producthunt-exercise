@@ -35,7 +35,7 @@ old <- theme_set(theme_tufte() + theme(text = element_text(family = "Menlo"), le
 
 # 针对主题的探索
 
-```{r a, echo = FALSE, warning = FALSE}
+```{r echo = FALSE, warning = FALSE}
 
 #分学科分三大类作业类型活跃占比 
 AllTopics %>% select(name,num_followers,num_posts) %>% 
@@ -50,7 +50,7 @@ AllTopics %>% select(name,num_followers,num_posts) %>%
 ```
 
 # 针对帖子发布时间的探索
-```{r a, echo = FALSE, warning = FALSE}
+```{r echo = FALSE, warning = FALSE}
 
 PostsForAnalysis %>% select(date,time_of_day,votes_count,product_state) %>% 
   #filter(product_state=='pre_launch') %>% 
@@ -61,11 +61,10 @@ PostsForAnalysis %>% select(date,time_of_day,votes_count,product_state) %>%
   geom_bar(aes(as.factor(year),votes,fill=time_of_day),
            stat = 'identity',width = 0.1,position = 'dodge',show.legend = FALSE)+
   labs(x = "Year", y = "Votes")
-    
-```
+
 
 # 搜索科技产品触觉达人
-```{r a, echo = FALSE, warning = FALSE}
+``` {r echo = FALSE, warning = FALSE}
 
 PostsForAnalysis %>% as_tibble() %>% 
   #filter(product_state=='pre_launch') %>% 
